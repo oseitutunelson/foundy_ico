@@ -1,66 +1,20 @@
-## Foundry
+## Token Sale Contract
+    
+   This is a simple token sale contract written in Solidity. It allows users to buy tokens with Ether and sell their tokens back for Ether.
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Setup
+   To use this contract, you will need to deploy it to the Ethereum blockchain. You will also need to set the tokensPerEth variable to the desired rate of exchange between tokens and Ether.
 
-Foundry consists of:
+# Buy Tokens
+   To buy tokens, users can call the buy function and send Ether to the contract. The contract will then transfer the tokens to the user's account.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+# Sell Tokens
+   To sell tokens, users can call the sellTokens function and specify the number of tokens they want to sell. The contract will then transfer the Ether to the user's account and burn the tokens.
 
-## Documentation
+# Events
+   The contract emits the following events:
 
-https://book.getfoundry.sh/
+- SellTokens: Emitted when a user sells tokens. The event has three parameters: the seller's address, the contract's address, and the number of tokens sold.
+Testing
+This contract has been tested using `forge test`
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
